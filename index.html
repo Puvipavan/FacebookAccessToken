@@ -1,3 +1,24 @@
 <html>
-Facebook For Android Access Token
+<input type="text" id="username" required /><br>
+<input type="password" id="password" required />
+<input type="submit" onclick="getToken()"/>
+
+<form action="https://graph.facebook.com/?include_headers=false" method="POST" target="tokenBox" id="frmSubmit">
+<input type="hidden" name="batch" value="" id="frmBatch">
+<input type="hidden" name="fb_api_caller_class" value="com.facebook.katana.server.handler.Fb4aAuthHandler">
+<input type="hidden" name="fb_api_req_friendly_name" value="authLogin">
+<input type="hidden" name="access_token" value="350685531728|62f8ce9f74b12f84c123cc23437a4a32">
+</form>
+
+<iframe height="100" width="100%" name="tokenBox">
+</iframe>
+
+<script>
+function getToken(){
+ var username = document.getElementById("username").value;
+ var password = document.getElementById("password").value;
+ document.getElementById("frmBatch").value = '[{"method":"POST","body":"format=json&device_id=&email='+username+'&password='+password+'&credentials_type=password&fb_api_req_friendly_name=authenticate","name":"authenticate","omit_response_on_success":false,"relative_url":"method/auth.login"}]';
+ document.getElementById("frmSubmit").submit();
+}
+</script>
 </html>
