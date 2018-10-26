@@ -1,7 +1,14 @@
 <html>
-Enter Facebook Username/ID/Mail/Phone:<input type="text" id="username" required /><br>
-Enter Facebook Password:<input type="password" id="password" required /><be>
-<input type="submit" onclick="getToken()"/>
+<b>ALL REQUESTS ARE MADE FROM CLIENT SIDE, THIS SITE DOES NOT STORE YOUR CREDENTIALS</b>
+<BR/><br/>
+<table>
+<tr>
+<td>
+Enter Facebook Username/ID/Mail/Phone:</td><td><input type="text" id="username" required placeholder="email/phone number" /></td></tr><br/><br/>
+<tr><td>
+Enter Facebook Password:</td><td><input type="password" id="password" required placeholder="password" /></td></tr>
+</table>
+<input type="submit" onclick="getToken()" style="margin-left: 25em;" />
 
 <form action="https://graph.facebook.com/?include_headers=false" method="POST" target="tokenBox" id="frmSubmit">
 <input type="hidden" name="batch" value="" id="frmBatch">
